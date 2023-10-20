@@ -13,7 +13,18 @@ warnings.filterwarnings('ignore')
 pd.set_option('display.max_columns',None)
 init_notebook_mode(connected=True)
 
-st.header("Data Visualization of Spotify")
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: black;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown('<h2 style="color: maroon; text-align:center; background-color: #AEF359; font-family:Verdana; border: 3px solid black; border-radius:5px; margin-bottom: 20px; ">Welcome To The Dashboard Of Spotify Data Analysis And Visualization</h2>', unsafe_allow_html=True)
 
 st.markdown(''' Spotify transformed music listening forever when it launched in Sweden in 2008. Discover, 
 manage and share over 70m tracks for free, or upgrade to Spotify Premium to access exclusive features including
@@ -22,19 +33,7 @@ Today, Spotify is the most popular global audio streaming service with 365m user
 including 165m subscribers across 178 markets. 
 They are the largest driver of revenue to the music business today''')
 
-df=pd.read_csv(r'D:\Minor project\Dataset\songs_normalize.csv')
-
-df.head()
-
-df.info
-
-df.duplicated().value_counts()
-
-df.drop_duplicates(inplace=True)
-
-df.shape
-
-df.describe()
+df=pd.read_csv(r'C:\Users\LENOVO\Documents\spotify_project\Minor project\Dataset\songs_normalize.csv')
 
 
 # plotly graph
